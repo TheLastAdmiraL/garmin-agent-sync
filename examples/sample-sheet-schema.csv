@@ -1,0 +1,2 @@
+start_time_local,date,activity_id,activity_type,name,duration_seconds,distance_m,average_hr_bpm,max_hr_bpm,calories,elevation_gain_m,average_speed_mps,average_cadence,average_power_w,aerobic_training_effect,anaerobic_training_effect,summary_sha256,full_summary_json
+2025-01-01T07:30:00,2025-01-01,SYNTHETIC-001,running,Synthetic Run,1800,5000,145,170,320,40,2.78,82,0,2.5,0.2,synthetic-hash-not-real,"{""activityId"":""SYNTHETIC-001""}"

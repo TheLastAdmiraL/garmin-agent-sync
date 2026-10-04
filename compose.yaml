@@ -1,0 +1,29 @@
+services:
+  sync:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile
+      args:
+        SYNC_UID: ${SYNC_UID:-10001}
+        SYNC_GID: ${SYNC_GID:-10001}
+    user: "${SYNC_UID:-10001}:${SYNC_GID:-10001}"
+    env_file:
+      - .env
+    environment:
+      XDG_STATE_HOME: /data
+      GOOGLE_APPLICATION_CREDENTIALS: /run/secrets/google-sheets.json
+    volumes:
+      - garmin-state:/data
+      - ${GOOGLE_SHEETS_CREDENTIALS:?Set GOOGLE_SHEETS_CREDENTIALS to a protected host file}:/run/secrets/google-sheets.json:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    init: true
+
+volumes:
+  garmin-state:

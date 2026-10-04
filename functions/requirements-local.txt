@@ -1,0 +1,4 @@
+# Minimal runtime dependencies for the Windows/Linux local Sheets runner.
+garminconnect==0.3.17
+google-api-python-client==2.201.0
+tzdata==2026.4

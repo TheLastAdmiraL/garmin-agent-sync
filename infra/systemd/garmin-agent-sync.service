@@ -1,0 +1,23 @@
+[Unit]
+Description=Garmin Agent Sync to Google Sheets
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=garmin-sync
+Group=garmin-sync
+WorkingDirectory=/opt/garmin-agent-sync
+StateDirectory=garmin-agent-sync
+StateDirectoryMode=0700
+Environment=XDG_STATE_HOME=/var/lib
+Environment=GOOGLE_APPLICATION_CREDENTIALS=/etc/garmin-agent-sync/google.json
+ExecStart=/opt/garmin-agent-sync-venv/bin/python functions/local_run.py sync
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/garmin-agent-sync
+
+[Install]
+WantedBy=multi-user.target

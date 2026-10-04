@@ -1,0 +1,12 @@
+[Unit]
+Description=Run Garmin Agent Sync container twice daily
+
+[Timer]
+OnCalendar=*-*-* 11:00:00 Asia/Kolkata
+OnCalendar=*-*-* 21:00:00 Asia/Kolkata
+Persistent=true
+AccuracySec=1min
+Unit=garmin-agent-sync-docker.service
+
+[Install]
+WantedBy=timers.target

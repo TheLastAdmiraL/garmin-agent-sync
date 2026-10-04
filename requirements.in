@@ -1,0 +1,2 @@
+# Direct dependency only. Build requirements.lock from this file before installing.
+garminconnect==0.3.11
