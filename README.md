@@ -76,7 +76,7 @@ The Sheets sync isolates `garminconnect` calls behind `GarminCollector`; the opt
 - You own the Garmin account, Google project, spreadsheet, credentials, schedule, backups, and exported data.
 - No production Garmin credentials, exported activity files, private sheets, or logs belong in this repository.
 - Firebase is the established deployment. Windows and Linux runners are included as self-hosted examples; run the documented checks and validate your own Google/Garmin access before scheduling them.
-- The project license is not yet selected. Review [the dependency and ownership decision](docs/decisions/0001-dependency-and-ownership.md) and choose a repository license before publishing a release.
+- The repository is licensed under [Apache-2.0](LICENSE). Review [the dependency and ownership decision](docs/decisions/0001-dependency-and-ownership.md) before changing dependency licenses or redistributing bundled components.
 
 ## Companion local archive
 
